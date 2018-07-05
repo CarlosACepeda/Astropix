@@ -5,7 +5,7 @@ This is a simple app that retrieves directly from "NASA Astronomic Picture of th
 
 |Main Acivity:|
 |-----------|
-|<img src="https://i.imgur.com/l8E8iQs.png" width=320>|
+|<img src="https://i.imgur.com/y16pLKi.png" width=320>|
 
 ## Built With
 
