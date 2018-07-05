@@ -21,6 +21,7 @@ namespace Astropix.Services
     /// </summary>
     class ImageOfTheDay
     {
+        private static ImageOfTheDay instance;
         /// <summary>
         /// The date of the picture
         /// </summary>
@@ -41,15 +42,30 @@ namespace Astropix.Services
         /// </summary>
         [XmlElement(ElementName = "explanation")]
         public string Explanation { get; set; }
+        /// <summary>
+        /// A picture url in standard quality 1024*768
+        /// </summary>
+        [XmlElement(ElementName ="url")]
+        public string Url { get; set; }
+        /// <summary>
+        /// A picture url in 4k quality.
+        /// </summary>
+        [XmlElement(ElementName ="hdurl")]
+        public string Hdurl { get; set; }
 
-        ///// <summary>
-        ///// A picture in standard quality 1024*768
-        ///// </summary>
-        //public string Image { get; set; }
-        ///// <summary>
-        ///// A picture in 4k quality.
-        ///// </summary>
-        //public string ImageHd { get; set; }
+        private ImageOfTheDay()
+        {
+
+        }
+        //Singleton, is only allowed to be a single Image of the day;
+        public static ImageOfTheDay ImageOfTheDayInstance()
+        {
+            if (instance == null)
+            {
+                instance = new ImageOfTheDay();
+            }
+            return instance;
+        }
 
     }
 }
