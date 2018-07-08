@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<!--Here it goes the PreferenceScreen for Astropix-->
+<PreferenceScreen xmlns:a="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory a:title="@string/options">
+    <ListPreference
+      a:key="imagequality"
+      a:title="@string/image_quality"
+      a:summary="@string/image_quality_desc"
+      a:entries="@array/listentries"
+      a:entryValues="@array/listvalues"
+      >
+    </ListPreference>
+  </PreferenceCategory>
+</PreferenceScreen>

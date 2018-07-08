@@ -13,6 +13,7 @@ using Android.Widget;
 using System.Net.Http;
 using Java.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Astropix.Factories
 {
@@ -21,6 +22,7 @@ namespace Astropix.Factories
     /// </summary>
     class ImageComposer
     {
+        private static System.IO.Stream inputStream;
         private static Bitmap photograph;
         /// <summary>
         /// this method will retrieve the actual image from the url given.
@@ -29,19 +31,14 @@ namespace Astropix.Factories
         /// <returns></returns>
         public static Bitmap RetrieveImageInStandardQuality(string urloftheimage)
         {
-
-            ThreadPool.QueueUserWorkItem(m =>
-            {
+            inputStream = new System.IO.MemoryStream();
                 if (urloftheimage != null)
                 {
-                    System.IO.Stream inputStream = new Java.Net.URL(urloftheimage).OpenStream();
+                    inputStream = new Java.Net.URL(urloftheimage).OpenStream();
                     photograph = BitmapFactory.DecodeStream(inputStream);
                 }
-               
-            });
+                
             return photograph;
-        }
-        
-
+        }       
     }
 }

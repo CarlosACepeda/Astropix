@@ -9,6 +9,9 @@ using Android.Content;
 using Astropix.Services;
 using System.Threading;
 using Astropix.Factories;
+using System.Threading.Tasks;
+using Android.Graphics;
+using Astropix.Activities;
 
 namespace Astropix
 {
@@ -62,8 +65,9 @@ namespace Astropix
             title.Text = imageOfTheDay.Title;
             copyright.Text = imageOfTheDay.Copyright;
             explanation.Text = imageOfTheDay.Explanation;
-           image.SetImageBitmap(ImageComposer.RetrieveImageInStandardQuality(imageOfTheDay.Url));
+            image.SetImageBitmap(imageOfTheDay.Image);
         }
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -77,6 +81,8 @@ namespace Astropix
             if (id == Resource.Id.action_settings)
             {
                 //TODO: GO to settings screen
+                Intent intent = new Intent(this, typeof(SettingsActivity));
+                StartActivity(intent);
                 return true;
             }
 

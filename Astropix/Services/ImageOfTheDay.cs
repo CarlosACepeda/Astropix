@@ -22,6 +22,9 @@ namespace Astropix.Services
     class ImageOfTheDay
     {
         private static ImageOfTheDay instance;
+
+        public Bitmap Image { get; internal set; }
+
         /// <summary>
         /// The date of the picture
         /// </summary>
@@ -52,6 +55,8 @@ namespace Astropix.Services
         /// </summary>
         [XmlElement(ElementName ="hdurl")]
         public string Hdurl { get; set; }
+
+
 
         private ImageOfTheDay()
         {
