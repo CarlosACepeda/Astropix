@@ -3371,6 +3371,9 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0014
 			public const int abc_toolbar_collapse_description = 2131427348;
 			
+			// aapt resource value: 0x7f0b0033
+			public const int about = 2131427379;
+			
 			// aapt resource value: 0x7f0b002b
 			public const int action_settings = 2131427371;
 			
@@ -3380,11 +3383,23 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0023
 			public const int appbar_scrolling_view_behavior = 2131427363;
 			
+			// aapt resource value: 0x7f0b003a
+			public const int askfortranslation = 2131427386;
+			
 			// aapt resource value: 0x7f0b0024
 			public const int bottom_sheet_behavior = 2131427364;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int character_counter_pattern = 2131427365;
+			
+			// aapt resource value: 0x7f0b003b
+			public const int contactme = 2131427387;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int eng = 2131427384;
+			
+			// aapt resource value: 0x7f0b0039
+			public const int esp = 2131427385;
 			
 			// aapt resource value: 0x7f0b0030
 			public const int hd = 2131427376;
@@ -3394,6 +3409,9 @@ namespace Astropix
 			
 			// aapt resource value: 0x7f0b0031
 			public const int image_quality_desc = 2131427377;
+			
+			// aapt resource value: 0x7f0b0035
+			public const int myname = 2131427381;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int normal = 2131427375;
@@ -3425,11 +3443,20 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0016
 			public const int status_bar_notification_info_overflow = 2131427350;
 			
+			// aapt resource value: 0x7f0b0037
+			public const int translations = 2131427383;
+			
 			// aapt resource value: 0x7f0b0000
 			public const int v7_preference_off = 2131427328;
 			
 			// aapt resource value: 0x7f0b0001
 			public const int v7_preference_on = 2131427329;
+			
+			// aapt resource value: 0x7f0b0034
+			public const int version = 2131427380;
+			
+			// aapt resource value: 0x7f0b0036
+			public const int year = 2131427382;
 			
 			static String()
 			{

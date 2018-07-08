@@ -8,4 +8,13 @@
   <string name="hd">HD</string>
   <string name="image_quality_desc">Seleciona la calidad de imagen</string>
   <string name="settings">Ajustes</string>
+  <string name="about">Acerca de</string>
+  <string name="version">Versión</string>
+  <string name="myname">Carlos Cepeda</string>
+  <string name="year">2018</string>
+  <string name="translations">Traducciones</string>
+  <string name="eng">Inglés</string>
+  <string name="esp">Español</string>
+  <string name="askfortranslation">¿Quieres ayudar a traducir?</string>
+  <string name="contactme">Contáctame</string>
 </resources>
