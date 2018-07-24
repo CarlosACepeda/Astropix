@@ -25,16 +25,19 @@
                 android:orientation="vertical">
                 <ImageView
                     android:id="@+id/ivImageOfTheDay"
+                    android:src="@drawable/warning_black_48dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/tvTitle"
                     android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/notitleavailable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView
                     android:id="@+id/tvExplanation"
                     android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/noexplanationavailable"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
                 <TextView

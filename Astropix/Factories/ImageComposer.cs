@@ -29,7 +29,7 @@ namespace Astropix.Factories
         /// </summary>
         /// <param name="urloftheimage">Self explaining</param>
         /// <returns></returns>
-        public static Bitmap RetrieveImageInStandardQuality(string urloftheimage)
+        public static Bitmap RetrieveImagey(string urloftheimage)
         {
             inputStream = new System.IO.MemoryStream();
                 if (urloftheimage != null)
@@ -37,7 +37,10 @@ namespace Astropix.Factories
                     inputStream = new Java.Net.URL(urloftheimage).OpenStream();
                     photograph = BitmapFactory.DecodeStream(inputStream);
                 }
-                
+            if(photograph==null)
+            {
+                System.Console.WriteLine("The photograph is null!");
+            }
             return photograph;
         }       
     }

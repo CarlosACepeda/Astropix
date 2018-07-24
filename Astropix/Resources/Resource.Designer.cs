@@ -2345,26 +2345,26 @@ namespace Astropix
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020069
-			public const int avd_hide_password_1 = 2130837609;
-			
 			// aapt resource value: 0x7f02006a
-			public const int avd_hide_password_2 = 2130837610;
+			public const int avd_hide_password_1 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int avd_hide_password_3 = 2130837611;
+			public const int avd_hide_password_2 = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int avd_hide_password_3 = 2130837612;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02006c
-			public const int avd_show_password_1 = 2130837612;
-			
 			// aapt resource value: 0x7f02006d
-			public const int avd_show_password_2 = 2130837613;
+			public const int avd_show_password_1 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int avd_show_password_3 = 2130837614;
+			public const int avd_show_password_2 = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int avd_show_password_3 = 2130837615;
 			
 			// aapt resource value: 0x7f020055
 			public const int design_bottom_navigation_item_background = 2130837589;
@@ -2411,11 +2411,11 @@ namespace Astropix
 			// aapt resource value: 0x7f020063
 			public const int notification_icon_background = 2130837603;
 			
-			// aapt resource value: 0x7f020067
-			public const int notification_template_icon_bg = 2130837607;
-			
 			// aapt resource value: 0x7f020068
-			public const int notification_template_icon_low_bg = 2130837608;
+			public const int notification_template_icon_bg = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int notification_template_icon_low_bg = 2130837609;
 			
 			// aapt resource value: 0x7f020064
 			public const int notification_tile_bg = 2130837604;
@@ -2425,6 +2425,9 @@ namespace Astropix
 			
 			// aapt resource value: 0x7f020066
 			public const int preference_list_divider_material = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int warning_black_48dp = 2130837607;
 			
 			static Drawable()
 			{
@@ -3371,20 +3374,20 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0014
 			public const int abc_toolbar_collapse_description = 2131427348;
 			
-			// aapt resource value: 0x7f0b0033
-			public const int about = 2131427379;
-			
 			// aapt resource value: 0x7f0b002b
-			public const int action_settings = 2131427371;
+			public const int about = 2131427371;
 			
 			// aapt resource value: 0x7f0b002c
-			public const int app_name = 2131427372;
+			public const int action_settings = 2131427372;
+			
+			// aapt resource value: 0x7f0b002d
+			public const int app_name = 2131427373;
 			
 			// aapt resource value: 0x7f0b0023
 			public const int appbar_scrolling_view_behavior = 2131427363;
 			
-			// aapt resource value: 0x7f0b003a
-			public const int askfortranslation = 2131427386;
+			// aapt resource value: 0x7f0b002e
+			public const int askfortranslation = 2131427374;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int bottom_sheet_behavior = 2131427364;
@@ -3392,32 +3395,38 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0025
 			public const int character_counter_pattern = 2131427365;
 			
-			// aapt resource value: 0x7f0b003b
-			public const int contactme = 2131427387;
-			
-			// aapt resource value: 0x7f0b0038
-			public const int eng = 2131427384;
-			
-			// aapt resource value: 0x7f0b0039
-			public const int esp = 2131427385;
+			// aapt resource value: 0x7f0b002f
+			public const int contactme = 2131427375;
 			
 			// aapt resource value: 0x7f0b0030
-			public const int hd = 2131427376;
-			
-			// aapt resource value: 0x7f0b002e
-			public const int image_quality = 2131427374;
+			public const int eng = 2131427376;
 			
 			// aapt resource value: 0x7f0b0031
-			public const int image_quality_desc = 2131427377;
+			public const int esp = 2131427377;
+			
+			// aapt resource value: 0x7f0b0032
+			public const int hd = 2131427378;
+			
+			// aapt resource value: 0x7f0b0033
+			public const int image_quality = 2131427379;
+			
+			// aapt resource value: 0x7f0b0034
+			public const int image_quality_desc = 2131427380;
 			
 			// aapt resource value: 0x7f0b0035
 			public const int myname = 2131427381;
 			
-			// aapt resource value: 0x7f0b002f
-			public const int normal = 2131427375;
+			// aapt resource value: 0x7f0b003d
+			public const int noexplanationavailable = 2131427389;
 			
-			// aapt resource value: 0x7f0b002d
-			public const int options = 2131427373;
+			// aapt resource value: 0x7f0b0036
+			public const int normal = 2131427382;
+			
+			// aapt resource value: 0x7f0b003c
+			public const int notitleavailable = 2131427388;
+			
+			// aapt resource value: 0x7f0b0037
+			public const int options = 2131427383;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int password_toggle_content_description = 2131427366;
@@ -3437,14 +3446,14 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0015
 			public const int search_menu_title = 2131427349;
 			
-			// aapt resource value: 0x7f0b0032
-			public const int settings = 2131427378;
+			// aapt resource value: 0x7f0b0038
+			public const int settings = 2131427384;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int status_bar_notification_info_overflow = 2131427350;
 			
-			// aapt resource value: 0x7f0b0037
-			public const int translations = 2131427383;
+			// aapt resource value: 0x7f0b0039
+			public const int translations = 2131427385;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int v7_preference_off = 2131427328;
@@ -3452,11 +3461,11 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0001
 			public const int v7_preference_on = 2131427329;
 			
-			// aapt resource value: 0x7f0b0034
-			public const int version = 2131427380;
+			// aapt resource value: 0x7f0b003a
+			public const int version = 2131427386;
 			
-			// aapt resource value: 0x7f0b0036
-			public const int year = 2131427382;
+			// aapt resource value: 0x7f0b003b
+			public const int year = 2131427387;
 			
 			static String()
 			{

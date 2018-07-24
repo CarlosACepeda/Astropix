@@ -12,6 +12,7 @@ using Astropix.Factories;
 using System.Threading.Tasks;
 using Android.Graphics;
 using Astropix.Activities;
+using Astropix.DataRepository;
 
 namespace Astropix
 {
@@ -20,6 +21,7 @@ namespace Astropix
 	{
         ImageView image;
         TextView title, explanation, copyright;
+        FloatingActionButton fab;
 
         protected override void OnCreate(Bundle savedInstanceState)
 		{
@@ -28,10 +30,12 @@ namespace Astropix
 
 			SetContentView(Resource.Layout.activity_main);
 
-			Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
+            using (Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar))
+            {
+                SetSupportActionBar(toolbar);
+            }
 
-			FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+			fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
             image = FindViewById<ImageView>(Resource.Id.ivImageOfTheDay);
              title = FindViewById<TextView>(Resource.Id.tvTitle);
              explanation = FindViewById<TextView>(Resource.Id.tvExplanation);
@@ -44,18 +48,6 @@ namespace Astropix
         }
         protected override void OnResume()
         {
-            try
-            {
-                if (AstropixRetrieverService.isInfoAvailable == true)
-                {
-                    FillImageOfTheDayInformation();
-                }
-
-            }
-            catch
-            {
-                Console.Write("failed");
-            }
             base.OnResume();
         }
 
@@ -94,8 +86,13 @@ namespace Astropix
             //View view = (View) sender;
             //Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
             //    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-            Intent intent = new Intent(this, typeof(AstropixRetrieverService));
-            StartService(intent);
+            //Intent intent = new Intent(this, typeof(AstropixRetrieverService));
+            //StartService(intent);
+
+            //Schedule job.
+
+            Scheduler.ScheduleJob(this);
+
             
         }
 	}
