@@ -1,5 +1,5 @@
 # Astropix
-This is a simple app that retrieves directly from "NASA Astronomic Picture of the Day API (APOD)" an image and sets it as your current wallpaper
+This is a simple app that retrieves directly from "NASA Astronomy Picture of the Day API (APOD)" an image and sets it as your current wallpaper
 
 ### Screenshot
 
@@ -13,7 +13,7 @@ This is a simple app that retrieves directly from "NASA Astronomic Picture of th
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning
+I use [SemVer](http://semver.org/) for versioning
 
 ## Authors & Collaborators
 
