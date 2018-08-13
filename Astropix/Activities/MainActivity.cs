@@ -40,10 +40,9 @@ namespace Astropix
              title = FindViewById<TextView>(Resource.Id.tvTitle);
              explanation = FindViewById<TextView>(Resource.Id.tvExplanation);
              copyright = FindViewById<TextView>(Resource.Id.tvCopyright);
-           
             
-           
             fab.Click += FabOnClick;
+
             base.OnCreate(savedInstanceState);
         }
         protected override void OnResume()
@@ -51,14 +50,6 @@ namespace Astropix
             base.OnResume();
         }
 
-        private void FillImageOfTheDayInformation()
-        {
-           ImageOfTheDay imageOfTheDay= ImageOfTheDay.ImageOfTheDayInstance();
-            title.Text = imageOfTheDay.Title;
-            copyright.Text = imageOfTheDay.Copyright;
-            explanation.Text = imageOfTheDay.Explanation;
-            image.SetImageBitmap(imageOfTheDay.Image);
-        }
 
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -88,10 +79,6 @@ namespace Astropix
             //    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
             //Intent intent = new Intent(this, typeof(AstropixRetrieverService));
             //StartService(intent);
-
-            //Schedule job.
-
-            Scheduler.ScheduleJob(this);
 
             
         }

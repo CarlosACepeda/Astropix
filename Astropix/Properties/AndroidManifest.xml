@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" package="Underground.Astropix" android:installLocation="auto" android:versionName="0.1.3">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" package="Underground.Astropix" android:installLocation="auto" android:versionName="0.1.5">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="25" />
 	<uses-permission android:name="android.permission.SET_WALLPAPER" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

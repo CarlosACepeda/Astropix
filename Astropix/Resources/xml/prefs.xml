@@ -2,6 +2,13 @@
 <!--Here it goes the PreferenceScreen for Astropix-->
 <PreferenceScreen xmlns:a="http://schemas.android.com/apk/res/android">
   <PreferenceCategory a:title="@string/options">
+    <SwitchPreference
+      a:key="enableservice"
+      a:title="@string/enableservice"
+      a:summary="@string/enableservice_desc"
+      >
+      
+    </SwitchPreference>
     <ListPreference
       a:key="imagequality"
       a:title="@string/image_quality"

@@ -3398,6 +3398,12 @@ namespace Astropix
 			// aapt resource value: 0x7f0b002f
 			public const int contactme = 2131427375;
 			
+			// aapt resource value: 0x7f0b003e
+			public const int enableservice = 2131427390;
+			
+			// aapt resource value: 0x7f0b003f
+			public const int enableservice_desc = 2131427391;
+			
 			// aapt resource value: 0x7f0b0030
 			public const int eng = 2131427376;
 			
@@ -3416,17 +3422,17 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0035
 			public const int myname = 2131427381;
 			
-			// aapt resource value: 0x7f0b003d
-			public const int noexplanationavailable = 2131427389;
-			
 			// aapt resource value: 0x7f0b0036
-			public const int normal = 2131427382;
-			
-			// aapt resource value: 0x7f0b003c
-			public const int notitleavailable = 2131427388;
+			public const int noexplanationavailable = 2131427382;
 			
 			// aapt resource value: 0x7f0b0037
-			public const int options = 2131427383;
+			public const int normal = 2131427383;
+			
+			// aapt resource value: 0x7f0b0038
+			public const int notitleavailable = 2131427384;
+			
+			// aapt resource value: 0x7f0b0039
+			public const int options = 2131427385;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int password_toggle_content_description = 2131427366;
@@ -3446,14 +3452,14 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0015
 			public const int search_menu_title = 2131427349;
 			
-			// aapt resource value: 0x7f0b0038
-			public const int settings = 2131427384;
+			// aapt resource value: 0x7f0b003a
+			public const int settings = 2131427386;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int status_bar_notification_info_overflow = 2131427350;
 			
-			// aapt resource value: 0x7f0b0039
-			public const int translations = 2131427385;
+			// aapt resource value: 0x7f0b003b
+			public const int translations = 2131427387;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int v7_preference_off = 2131427328;
@@ -3461,11 +3467,11 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0001
 			public const int v7_preference_on = 2131427329;
 			
-			// aapt resource value: 0x7f0b003a
-			public const int version = 2131427386;
+			// aapt resource value: 0x7f0b003c
+			public const int version = 2131427388;
 			
-			// aapt resource value: 0x7f0b003b
-			public const int year = 2131427387;
+			// aapt resource value: 0x7f0b003d
+			public const int year = 2131427389;
 			
 			static String()
 			{

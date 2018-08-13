@@ -11,12 +11,14 @@
   <string name="image_quality">Calidad de imagen</string>
   <string name="image_quality_desc">Seleciona la calidad de imagen</string>
   <string name="myname">Carlos Cepeda</string>
+  <string name="noexplanationavailable">No hay una explicación disponible</string>
   <string name="normal">Normal</string>
+  <string name="notitleavailable">No hay un título disponible</string>
   <string name="options">Opciones</string>
   <string name="settings">Ajustes</string>
   <string name="translations">Traducciones</string>
   <string name="version">Versión</string>
   <string name="year">2018</string>
-  <string name="notitleavailable">No hay un título disponible</string>
-  <string name="noexplanationavailable">No hay una explicación disponible</string>
+  <string name="enableservice">Activar el servicio</string>
+  <string name="enableservice_desc">Descargar una imagen cada día.</string>
 </resources>
