@@ -13,6 +13,7 @@ using Android.Views;
 using Android.Widget;
 using Astropix.BroadcastReceivers;
 using Astropix.Misc;
+using Astropix.Services;
 
 namespace Astropix.Fragments
 {
@@ -55,23 +56,40 @@ namespace Astropix.Fragments
             {
                 if (sharedPreferences.GetBoolean(key, false) == true)
                 {
-                    intent = new Intent(Application.Context, typeof(AlarmReceiver));
-                    pendingIntent = PendingIntent.GetBroadcast(Application.Context, 2, intent, PendingIntentFlags.UpdateCurrent);
-                    //If the user enables the service, schedule the alarm or Scheduler to download data each day.
-                    EnableBootReceiver();
+                    #region Enable AlarmManager Ice Cream Sandwich.
+                    if (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch)
+                    {
+                        intent = new Intent(Application.Context, typeof(AlarmReceiver));
+                        pendingIntent = PendingIntent.GetBroadcast(Application.Context, 2, intent, PendingIntentFlags.UpdateCurrent);
+                        //If the user enables the service, schedule the alarm or Scheduler to download data each day.
+                        EnableBootReceiver();
 
-                    //Kitkat or Less.
-                    //>Schedule an alarm to run after 30 minutes after this call(second parameter), and everyday after that.(third parameter)
-                    alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime()+AlarmManager.IntervalFifteenMinutes, AlarmManager.IntervalDay, pendingIntent);
+                        //Kitkat or Less.
+                        //>Schedule an alarm to run after 30 minutes after this call(second parameter), and once a day after that.(third parameter)
+                        alarmManager.SetInexactRepeating(AlarmType.ElapsedRealtimeWakeup, SystemClock.ElapsedRealtime() + AlarmManager.IntervalFifteenMinutes, AlarmManager.IntervalDay, pendingIntent);
+                    }
+                    #endregion
+                    #region Enable JobScheduler Lollipop and Beyond.
+                    Scheduler.ScheduleJob(Application.Context);
                     EnableBootReceiver();
+                    #endregion
                 }
-                else if (sharedPreferences.GetBoolean(key, false) == true)
+                else if (sharedPreferences.GetBoolean(key, false) == false)
                 {
-                    alarmManager?.Cancel(pendingIntent);
-                    DisableBootReceiver();
+
+                    #region Disable AlarmManager Ice Cream Sandwich
+                    if (Build.VERSION.SdkInt < BuildVersionCodes.KitkatWatch)
+                    {
+                        alarmManager?.Cancel(pendingIntent);
+                        DisableBootReceiver();
+                    }
+                    #endregion
+                    #region Disable JobScheduler Lollipop and Beyond.
+                    Scheduler.CancelSchedule(Application.Context);
+                    #endregion
                 }
-                    
-            
+
+
             }
         }
         void EnableBootReceiver()

@@ -10,9 +10,6 @@ namespace Astropix.DataRepository
         /// A class used to build a 'Image of the day' that the Activity will use to show Information about this image and the image itself
         /// </summary>
 
-        private static ImageOfTheDay instance;
-
-        public Bitmap Image { get; internal set; }
 
         /// <summary>
         /// The date of the picture
@@ -43,7 +40,6 @@ namespace Astropix.DataRepository
         /// </summary>
         [XmlElement(ElementName = "url")]
         public string Url { get; set; }
-
         /// <summary>
         /// A picture url in 4k quality.
         /// </summary>
@@ -53,18 +49,9 @@ namespace Astropix.DataRepository
         [XmlElement(ElementName = "media_type")]
         public string Media_Type { get; set; }
 
-        private ImageOfTheDay()
+        public ImageOfTheDay()
         {
         }
 
-        //Singleton, is only allowed to be a single Image of the day;
-        public static ImageOfTheDay ImageOfTheDayInstance()
-        {
-            if (instance == null)
-            {
-                instance = new ImageOfTheDay();
-            }
-            return instance;
-        }
     }
 }

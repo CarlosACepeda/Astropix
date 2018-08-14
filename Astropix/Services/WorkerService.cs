@@ -14,6 +14,7 @@ using Android.Widget;
 using Astropix.Factories;
 using Astropix.DataRepository;
 using Newtonsoft.Json;
+using Android.Util;
 
 namespace Astropix.Services
 {
@@ -24,43 +25,43 @@ namespace Astropix.Services
         ImageOfTheDay imageOfTheDay;
         public override bool OnStartJob(JobParameters @params)
         {
-            imageOfTheDay = ImageOfTheDay.ImageOfTheDayInstance();
-
-            Console.WriteLine("OnStartJob Called");
-            ThreadPool.QueueUserWorkItem(async m =>
+            Log.Info("Astropix", "Its time to download data");
+            try
             {
-                var client = new HttpClient();
-                try
+                ThreadPool.QueueUserWorkItem(async m =>
                 {
-                    var result = await client.GetStringAsync(urlplussecret);
+
+                    var httpClient = new HttpClient();
+                    var result = await httpClient.GetStringAsync(urlplussecret);
                     var post = JsonConvert.DeserializeObject<ImageOfTheDay>(result);
-                    imageOfTheDay.Title = post.Title;
-                    imageOfTheDay.Explanation = post.Explanation;
-                    imageOfTheDay.Url = post.Url;
-                    imageOfTheDay.Hdurl = post.Hdurl;
-                    imageOfTheDay.Copyright = post.Copyright;
-                    if (post.Media_Type == "image")//If is a video, will retain the past image
+                    imageOfTheDay = post;
+                    
+                    using (var dbhelper = new DBHelper())
                     {
-                        imageOfTheDay.Image = ImageComposer.RetrieveImagey(post.Url);
-                        Console.WriteLine();
-                        WallpaperManager wallpaperManager = WallpaperManager.GetInstance(Application.Context);
-                        wallpaperManager.SetBitmap(imageOfTheDay.Image);
+                        dbhelper.InsertIntoTableImageOfTheDay(imageOfTheDay);
+                        
                     }
 
-                    JobFinished(@params, false);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("No internet connection or failing Api call" +ex);
-                    JobFinished(@params, true); //Failed, need to reschedule again.
-                }
-            });
+                    if (post.Media_Type == "image")
+                    {
+                        ImageComposer.SetDownloadedImageAsBackground(post.Url);
+                    }
+                });
+            }
+            catch
+            {
+                return false; //Failed download, needs rescheduling.
+            }
+            
+     
+            
+
             return true;
         }
 
         public override bool OnStopJob(JobParameters @params)
         {
-            Console.Write("OnStopJob Called");
+            Log.Info("Astropix","OnStopJob Called");
             return true;
             
         }

@@ -34,14 +34,32 @@ namespace Astropix.Factories
             inputStream = new System.IO.MemoryStream();
                 if (urloftheimage != null)
                 {
+                ThreadPool.QueueUserWorkItem(m =>
+                {
                     inputStream = new Java.Net.URL(urloftheimage).OpenStream();
                     photograph = BitmapFactory.DecodeStream(inputStream);
+                    if (photograph==null)
+                    {
+                        System.Console.WriteLine("The photograph is null!");
+                    }
+                });
+                    
+                
                 }
-            if(photograph==null)
+                return photograph;
+        }
+        public static void SetDownloadedImageAsBackground(string urloftheimage)
+        {
+            
+            ThreadPool.QueueUserWorkItem(async m =>
             {
-                System.Console.WriteLine("The photograph is null!");
+                var inputStream = new Java.Net.URL(urloftheimage).OpenStream();
+                var photograph = await BitmapFactory.DecodeStreamAsync(inputStream);
+                WallpaperManager wallpaperManager = WallpaperManager.GetInstance(Application.Context);
+                wallpaperManager.SetBitmap(photograph);
+
             }
-            return photograph;
-        }       
+            );
+        }
     }
 }

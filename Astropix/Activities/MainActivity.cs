@@ -13,35 +13,46 @@ using System.Threading.Tasks;
 using Android.Graphics;
 using Astropix.Activities;
 using Astropix.DataRepository;
+using Android.Support.V7.Widget;
+using Astropix.Adapters;
+using System.Collections.Generic;
+using Android.Support.V7.Preferences;
+using Astropix.Misc;
 
 namespace Astropix
 {
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity
 	{
-        ImageView image;
-        TextView title, explanation, copyright;
-        FloatingActionButton fab;
+        private RecyclerView recyclerView;
+        private RecyclerView.LayoutManager layoutManager;
+        private ImageOfTheDayAdapter imageOfTheDayAdapter;
+        private List<ImageOfTheDay> imagesOfTheDay = new List<ImageOfTheDay>();
 
         protected override void OnCreate(Bundle savedInstanceState)
 		{
-            //TODO: Fill a View that will show the Current image of the day information
-			
+            SetContentView(Resource.Layout.activity_main);
+            IsApplicationFresh();
+            DBHelper dbhelper = new DBHelper();
+            
+                imagesOfTheDay= dbhelper.SelectTableImageOfTheDay();               
+            
 
-			SetContentView(Resource.Layout.activity_main);
+            
+            using (recyclerView = FindViewById<RecyclerView>(Resource.Id.imagesOfTheDayList))
+            {
+                imageOfTheDayAdapter = new ImageOfTheDayAdapter(imagesOfTheDay);
+                layoutManager = new LinearLayoutManager(Application.Context);
+                recyclerView.SetLayoutManager(layoutManager);
+                recyclerView.SetAdapter(imageOfTheDayAdapter);
+            };
+
+            
 
             using (Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar))
             {
                 SetSupportActionBar(toolbar);
             }
-
-			fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            image = FindViewById<ImageView>(Resource.Id.ivImageOfTheDay);
-             title = FindViewById<TextView>(Resource.Id.tvTitle);
-             explanation = FindViewById<TextView>(Resource.Id.tvExplanation);
-             copyright = FindViewById<TextView>(Resource.Id.tvCopyright);
-            
-            fab.Click += FabOnClick;
 
             base.OnCreate(savedInstanceState);
         }
@@ -49,9 +60,6 @@ namespace Astropix
         {
             base.OnResume();
         }
-
-
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
@@ -81,6 +89,27 @@ namespace Astropix
             //StartService(intent);
 
             
+        }
+        private void IsApplicationFresh()
+        {
+            using (var sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context))
+            {
+                if (sharedPreferences.GetBoolean(ConfigurationParameters.isappfresh, true) == true)
+                {
+                    CreateDatabase();
+                    using (ISharedPreferencesEditor sharedPreferencesEditor = sharedPreferences.Edit())
+                    {
+                        sharedPreferencesEditor.PutBoolean(ConfigurationParameters.isappfresh, false);
+                    }
+                }
+            }
+        }
+        private void CreateDatabase()
+        {
+            using (var dbhelper = new DBHelper())
+            {
+                dbhelper.CreateDatabase();
+            }
         }
 	}
 }

@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Astropix.Services;
 
 namespace Astropix.BroadcastReceivers
 {
@@ -22,7 +23,11 @@ namespace Astropix.BroadcastReceivers
         public override void OnReceive(Context context, Intent intent)
         {
             //Reschuedule the Sync, because after a reboot all the AlarmManagers or Jobschedulers gets cleared.
-
+            #region Ice Cream Sandwich Enable Alarm
+            #endregion
+            #region Lollipop and Beyond Enable JobScheduler
+            Scheduler.ScheduleJob(Application.Context);
+            #endregion
         }
     }
 }

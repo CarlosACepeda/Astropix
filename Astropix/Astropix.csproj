@@ -59,6 +59,7 @@
     <Compile Include="Activities\ImageViewerActivity.cs" />
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\SettingsActivity.cs" />
+    <Compile Include="Adapters\ImageOfTheDayAdapter.cs" />
     <Compile Include="BroadcastReceivers\AlarmReceiver.cs" />
     <Compile Include="BroadcastReceivers\BootBroadcastReceiver.cs" />
     <Compile Include="DataRepository\DBHelper.cs" />
@@ -123,6 +124,9 @@
     <PackageReference Include="Xamarin.Android.Support.v7.CardView">
       <Version>25.4.0.2</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <Version>25.4.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\xml\prefs.xml" />
@@ -145,7 +149,14 @@
     <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Adapters\" />
+    <AndroidResource Include="Resources\layout\image_viewer.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\imageofthedayitemrow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

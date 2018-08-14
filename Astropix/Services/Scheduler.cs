@@ -10,6 +10,7 @@ using Android.App.Job;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Astropix.DataRepository;
@@ -24,20 +25,27 @@ namespace Astropix.Services
         {
             ComponentName serviceComponent = new ComponentName(context, Java.Lang.Class.FromType(typeof(WorkerService)));
             JobInfo.Builder builder = new JobInfo.Builder(0, serviceComponent)
-                                                            .SetPeriodic(24*60*60000, 15000);//A day. //Configurable?
+                                                            .SetPeriodic(AlarmManager.IntervalFifteenMinutes);//A day. //Configurable?
              JobScheduler jobScheduler = (JobScheduler)context.GetSystemService(Context.JobSchedulerService);
             JobInfo jobInfo = builder.Build();
             int result = jobScheduler.Schedule(jobInfo);
             if (result == JobScheduler.ResultSuccess)
             {
-                Console.WriteLine("Job Result Sucess");
+                Log.Info("Astropix","Job Result Sucess");
             }
             else
             {
-                Console.Write("Job Result Failed");
+                Log.Info("Astropix", "Job Result Not Sucess");
             }
 
 
+        }
+        public static void CancelSchedule(Context context)
+        {
+            using (var jobScheduler = (JobScheduler)context.GetSystemService(Context.JobSchedulerService))
+            {
+                jobScheduler.CancelAll();
+            };
         }
     }
 }
