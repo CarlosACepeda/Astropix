@@ -1,11 +1,15 @@
 # Astropix
-This is a simple app that retrieves directly from "NASA Astronomy Picture of the Day API (APOD)" an image and sets it as your current wallpaper
+This is a simple app that retrieves directly from "NASA Astronomy Picture of the Day API (APOD)" an image and sets it as your current wallpaper, you can explore other days images, also save the ones that you like the most. (-:
 
-### Screenshot
+*...I like the space images though :)*
 
-|Main Acivity:|
-|-----------|
-|<img src="https://i.imgur.com/y16pLKi.png" width=320>|
+### Screenshots
+
+*The image displayed shows the Messier 86 (M86) Galaxy in the Virgo Cluster*
+
+|Main Activity:|Changed Wallpaper :)|
+|-----------|------------|
+|<img src="https://i.imgur.com/3ns6Kmv.png" width=320>|<img src="https://i.imgur.com/ula94DA.png" width=320>
 
 ## Built With
 
@@ -20,6 +24,8 @@ I use [SemVer](http://semver.org/) for versioning
 * **Me** - *Initial work* - [CarlosACepeda](https://github.com/CarlosACepeda)
 
 See also the list of [contributors](https://github.com/CarlosACepeda/LiveDisplay/contributors) who participated in this project.
+
+*Spoiler alert: None yet, but I will be pleased to receive contributions*
 
 ## Acknowledgments
 
