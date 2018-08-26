@@ -24,21 +24,22 @@ namespace Astropix
 	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity
 	{
+        private ImageView background;
         private RecyclerView recyclerView;
         private RecyclerView.LayoutManager layoutManager;
         private ImageOfTheDayAdapter imageOfTheDayAdapter;
         private List<ImageOfTheDay> imagesOfTheDay = new List<ImageOfTheDay>();
 
         protected override void OnCreate(Bundle savedInstanceState)
-		{
-            SetContentView(Resource.Layout.activity_main);
+        {
+            SetContentView(Resource.Layout.content_main);
             IsApplicationFresh();
             DBHelper dbhelper = new DBHelper();
-            
-                imagesOfTheDay= dbhelper.SelectTableImageOfTheDay();               
-            
 
-            
+            imagesOfTheDay = dbhelper.SelectTableImageOfTheDay();
+
+
+
             using (recyclerView = FindViewById<RecyclerView>(Resource.Id.imagesOfTheDayList))
             {
                 imageOfTheDayAdapter = new ImageOfTheDayAdapter(imagesOfTheDay);
@@ -47,12 +48,18 @@ namespace Astropix
                 recyclerView.SetAdapter(imageOfTheDayAdapter);
             };
 
-            
-
             using (Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar))
             {
                 SetSupportActionBar(toolbar);
             }
+            using (background = FindViewById<ImageView>(Resource.Id.background))
+            {
+                using (var wallpaperManager = WallpaperManager.GetInstance(Application.Context))
+                {
+                    background.Background = wallpaperManager.FastDrawable;
+                }
+            }
+
 
             base.OnCreate(savedInstanceState);
         }
@@ -65,7 +72,6 @@ namespace Astropix
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;

@@ -16,7 +16,7 @@ namespace Astropix.DataRepository
     class DBHelper: Java.Lang.Object
     {
         SQLiteConnection connection;
-        string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        readonly string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
         readonly string databasename = "notifications.db";
         public bool CreateDatabase()
         {
@@ -40,7 +40,7 @@ namespace Astropix.DataRepository
             {
                 using (connection = new SQLiteConnection(System.IO.Path.Combine(folder, databasename)))
                 {
-                    return connection.Table<ImageOfTheDay>().ToList();
+                    return connection.Table<ImageOfTheDay>().Reverse().ToList();
                 }
             }
             catch (SQLiteException ex)
@@ -72,11 +72,6 @@ namespace Astropix.DataRepository
             {
                 using (connection = new SQLiteConnection(System.IO.Path.Combine(folder, databasename)))
                 {
-                    //If 
-
-                    //connection.Query<ImageOfTheDay>("UPDATE ClsNotification set Titulo=?, Texto=?, Icono=? where Id=?",
-                    //    notificacion.Titulo, notificacion.Texto, notificacion.Icono, notificacion.Id);
-                    //return true;
                     return false;
                 }
             }
@@ -103,22 +98,27 @@ namespace Astropix.DataRepository
                 return false;
             }
         }
-        //This method is not necessary yet.
-        public bool SelectQueryTableImageOfTheDay(int id)
+        /// <summary>
+        /// Select a registry from the table using the url of the image, because that is the only way 
+        /// I have to identify an Image of the Day, the API does not provide an unique Id.
+        /// </summary>
+        /// <param name="hd_url"></param>
+        /// <returns></returns>
+        public bool SelectQueryImageOfTheDay(string hd_url)
         {
             try
             {
                 using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, "notifications.db")))
                 {
-                    connection.Query<ImageOfTheDay>("SELECT * FROM ImageOfTheDay Where Id=?", id);
+                    connection.Query<ImageOfTheDay>("SELECT * FROM ImageOfTheDay Where Hd_Url=?", hd_url);
                     return true;
                 }
             }
-            catch (SQLiteException ex)
+            catch
             {
-                Log.Warn("Error.", ex.Message);
                 return false;
             }
+            
         }
     }
 }

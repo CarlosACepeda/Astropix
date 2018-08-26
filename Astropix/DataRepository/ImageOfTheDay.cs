@@ -1,4 +1,5 @@
 ﻿using Android.Graphics;
+using Java.Util;
 using System;
 using System.Xml.Serialization;
 
@@ -6,10 +7,6 @@ namespace Astropix.DataRepository
 {
     internal class ImageOfTheDay
     {
-        /// <summary>
-        /// A class used to build a 'Image of the day' that the Activity will use to show Information about this image and the image itself
-        /// </summary>
-
 
         /// <summary>
         /// The date of the picture
@@ -51,6 +48,7 @@ namespace Astropix.DataRepository
 
         public ImageOfTheDay()
         {
+
         }
 
     }

@@ -25,7 +25,8 @@ namespace Astropix.Services
         {
             ComponentName serviceComponent = new ComponentName(context, Java.Lang.Class.FromType(typeof(WorkerService)));
             JobInfo.Builder builder = new JobInfo.Builder(0, serviceComponent)
-                                                            .SetPeriodic(AlarmManager.IntervalFifteenMinutes);//A day. //Configurable?
+                                                            .SetPersisted(true)
+                                                            .SetPeriodic(AlarmManager.IntervalDay);//A day. //Configurable?
              JobScheduler jobScheduler = (JobScheduler)context.GetSystemService(Context.JobSchedulerService);
             JobInfo jobInfo = builder.Build();
             int result = jobScheduler.Schedule(jobInfo);

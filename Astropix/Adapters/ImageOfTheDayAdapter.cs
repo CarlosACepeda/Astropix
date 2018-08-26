@@ -12,13 +12,14 @@ using Astropix.Activities;
 using Android.Graphics;
 using Android.Graphics.Drawables;
 using Java.IO;
+using Android.Text.Format;
 
 namespace Astropix.Adapters
 {
     class ImageOfTheDayAdapter : RecyclerView.Adapter
     {
         private List<ImageOfTheDay> imagesOfTheDay = new List<ImageOfTheDay>();
-        public static Bitmap bitmap;
+        
         public ImageOfTheDayAdapter(List<ImageOfTheDay> imagesOfTheDay )
         {
             this.imagesOfTheDay = imagesOfTheDay;
@@ -46,10 +47,15 @@ namespace Astropix.Adapters
             holder.title.Text = imagesOfTheDay[position].Title;
             holder.explanation.Text = imagesOfTheDay[position].Explanation;
             holder.copyright.Text = imagesOfTheDay[position].Copyright;
-            bitmap= ImageComposer.RetrieveImagey(imagesOfTheDay[position].Url);
-            holder.image.SetImageBitmap(bitmap);
-            holder.image.Click += Image_Click;
 
+            if (DateTime.Now.Day == imagesOfTheDay[position].Date.Day)
+            {
+                holder.when.Text = "Today";
+            }
+            else
+            {
+                holder.when.Text = imagesOfTheDay[position].Date.ToShortDateString();
+            }
         }
 
 
@@ -67,15 +73,14 @@ namespace Astropix.Adapters
 
     public class ImageOfTheDayAdapterViewHolder : RecyclerView.ViewHolder
     {
-        public ImageView image;
         public TextView title;
         public TextView explanation;
         public TextView copyright;
+        public TextView when;
 
         public ImageOfTheDayAdapterViewHolder(View itemView) : base(itemView)
         {
-
-            image = itemView.FindViewById<ImageView>(Resource.Id.ivImageOfTheDay);
+            when = itemView.FindViewById<TextView>(Resource.Id.tvWhen);
             title = itemView.FindViewById<TextView>(Resource.Id.tvTitle);
             explanation = itemView.FindViewById<TextView>(Resource.Id.tvExplanation);
             copyright = itemView.FindViewById<TextView>(Resource.Id.tvCopyright);

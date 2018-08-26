@@ -71,7 +71,6 @@ namespace Astropix.Fragments
                     #endregion
                     #region Enable JobScheduler Lollipop and Beyond.
                     Scheduler.ScheduleJob(Application.Context);
-                    EnableBootReceiver();
                     #endregion
                 }
                 else if (sharedPreferences.GetBoolean(key, false) == false)

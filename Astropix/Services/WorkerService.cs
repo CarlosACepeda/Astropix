@@ -30,22 +30,29 @@ namespace Astropix.Services
             {
                 ThreadPool.QueueUserWorkItem(async m =>
                 {
-
+                    //FIX ME: I crash when an HTTP Error occurs. (-:
                     var httpClient = new HttpClient();
                     var result = await httpClient.GetStringAsync(urlplussecret);
                     var post = JsonConvert.DeserializeObject<ImageOfTheDay>(result);
                     imageOfTheDay = post;
-                    
                     using (var dbhelper = new DBHelper())
                     {
-                        dbhelper.InsertIntoTableImageOfTheDay(imageOfTheDay);
-                        
+                        //If this query returns false, then Insert the new registry to the database.
+                        //and download the image from the url and set it as wallpaper.
+
+                        //If returns true, it means that the registry already exists, and it won't do anything, to avoid
+                        //inserting the same item twice or even more.
+                        if (!dbhelper.SelectQueryImageOfTheDay(post.Hdurl))
+                        {
+                            dbhelper.InsertIntoTableImageOfTheDay(imageOfTheDay);
+                            if (post.Media_Type == "image")
+                            {
+                                ImageComposer.SetDownloadedImageAsBackground(post.Url);
+                            }
+                        }                        
                     }
 
-                    if (post.Media_Type == "image")
-                    {
-                        ImageComposer.SetDownloadedImageAsBackground(post.Url);
-                    }
+                    
                 });
             }
             catch
@@ -53,9 +60,6 @@ namespace Astropix.Services
                 return false; //Failed download, needs rescheduling.
             }
             
-     
-            
-
             return true;
         }
 

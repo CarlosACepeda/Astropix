@@ -22,11 +22,8 @@ namespace Astropix.BroadcastReceivers
     {
         public override void OnReceive(Context context, Intent intent)
         {
-            //Reschuedule the Sync, because after a reboot all the AlarmManagers or Jobschedulers gets cleared.
+            //Reschuedule the Sync, because after a reboot the AlarmManager gets cleared.
             #region Ice Cream Sandwich Enable Alarm
-            #endregion
-            #region Lollipop and Beyond Enable JobScheduler
-            Scheduler.ScheduleJob(Application.Context);
             #endregion
         }
     }

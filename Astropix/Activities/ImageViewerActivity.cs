@@ -20,7 +20,6 @@ namespace Astropix.Activities
     {
         FloatingActionButton fab;
         private ImageView image;
-        private Bitmap bitmap;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,8 +36,6 @@ namespace Astropix.Activities
 
             //This Activity will serve to Display the Image in full screen along with all the Texts, Description
             //And also a button to save the image that is showing.
-            bitmap = ImageOfTheDayAdapter.bitmap;
-            image.SetImageBitmap(bitmap);
         }
 
         private void FabOnClick(object sender, EventArgs e)
