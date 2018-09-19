@@ -23,7 +23,7 @@ I use [SemVer](http://semver.org/) for versioning
 
 * **Me** - *Initial work* - [CarlosACepeda](https://github.com/CarlosACepeda)
 
-See also the list of [contributors](https://github.com/CarlosACepeda/LiveDisplay/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/CarlosACepeda/Astropix/contributors) who participated in this project.
 
 *Spoiler alert: None yet, but I will be pleased to receive contributions*
 
