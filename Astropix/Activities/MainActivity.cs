@@ -18,6 +18,7 @@ using Astropix.Adapters;
 using System.Collections.Generic;
 using Android.Support.V7.Preferences;
 using Astropix.Misc;
+using Android.Util;
 
 namespace Astropix
 {
@@ -56,7 +57,14 @@ namespace Astropix
             {
                 using (var wallpaperManager = WallpaperManager.GetInstance(Application.Context))
                 {
-                    background.Background = wallpaperManager.FastDrawable;
+                    try
+                    {
+                        background.Background = wallpaperManager.FastDrawable;
+                    }
+                    catch
+                    {
+                        Log.Info("Astropix", "We don't have permission");
+                    }
                 }
             }
 
