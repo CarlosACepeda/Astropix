@@ -6,7 +6,7 @@ This is a simple app that retrieves directly from "NASA Astronomy Picture of the
 ### Screenshots
 
 
-|Main Activity:|Changed Wallpaper :)|
+|Changed Wallpaper :)|Main Activity:|
 |-----------|------------|
 |<img src="https://i.imgur.com/uPOcCUb.png" width=320>|<img src="https://i.imgur.com/qcqtbDZ.png" width=320>
 
