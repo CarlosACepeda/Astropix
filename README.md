@@ -8,7 +8,7 @@ This is a simple app that retrieves directly from "NASA Astronomy Picture of the
 
 |Main Activity:|Changed Wallpaper :)|
 |-----------|------------|
-|<img src="https://i.imgur.com/3ns6Kmv.png" width=320>|<img src="https://i.imgur.com/ula94DA.png" width=320>
+|<img src="https://i.imgur.com/uPOcCUb.png" width=320>|<img src="https://i.imgur.com/qcqtbDZ.png" width=320>
 
 ## Built With
 
