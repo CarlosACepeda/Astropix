@@ -47,6 +47,7 @@ namespace Astropix.Adapters
             holder.title.Text = imagesOfTheDay[position].Title;
             holder.explanation.Text = imagesOfTheDay[position].Explanation;
             holder.copyright.Text = imagesOfTheDay[position].Copyright;
+            holder.container.Click += Container_Click;
 
             if (DateTime.Now.Day == imagesOfTheDay[position].Date.Day)
             {
@@ -58,6 +59,14 @@ namespace Astropix.Adapters
             }
         }
 
+        private void Container_Click(object sender, EventArgs e)
+        {
+            LinearLayout container = sender as LinearLayout;
+            using (Intent intent = new Intent(container.Context, Java.Lang.Class.FromType(typeof(ImageViewerActivity))))
+            {
+                Application.Context.StartActivity(intent);
+            }
+        }
 
         public override int ItemCount => imagesOfTheDay.Count;
 
@@ -77,6 +86,7 @@ namespace Astropix.Adapters
         public TextView explanation;
         public TextView copyright;
         public TextView when;
+        public LinearLayout container;
 
         public ImageOfTheDayAdapterViewHolder(View itemView) : base(itemView)
         {
@@ -84,6 +94,7 @@ namespace Astropix.Adapters
             title = itemView.FindViewById<TextView>(Resource.Id.tvTitle);
             explanation = itemView.FindViewById<TextView>(Resource.Id.tvExplanation);
             copyright = itemView.FindViewById<TextView>(Resource.Id.tvCopyright);
+            container = itemView.FindViewById<LinearLayout>(Resource.Id.itemcontainer);
 
         }
 

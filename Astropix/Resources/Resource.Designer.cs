@@ -2445,8 +2445,8 @@ namespace Astropix
 			// aapt resource value: 0x7f090084
 			public const int SpaceImage = 2131296388;
 			
-			// aapt resource value: 0x7f09008d
-			public const int action0 = 2131296397;
+			// aapt resource value: 0x7f09008e
+			public const int action0 = 2131296398;
 			
 			// aapt resource value: 0x7f090064
 			public const int action_bar = 2131296356;
@@ -2469,17 +2469,17 @@ namespace Astropix
 			// aapt resource value: 0x7f090041
 			public const int action_bar_title = 2131296321;
 			
-			// aapt resource value: 0x7f09008a
-			public const int action_container = 2131296394;
+			// aapt resource value: 0x7f09008b
+			public const int action_container = 2131296395;
 			
 			// aapt resource value: 0x7f090065
 			public const int action_context_bar = 2131296357;
 			
-			// aapt resource value: 0x7f090091
-			public const int action_divider = 2131296401;
+			// aapt resource value: 0x7f090092
+			public const int action_divider = 2131296402;
 			
-			// aapt resource value: 0x7f09008b
-			public const int action_image = 2131296395;
+			// aapt resource value: 0x7f09008c
+			public const int action_image = 2131296396;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -2496,14 +2496,14 @@ namespace Astropix
 			// aapt resource value: 0x7f090043
 			public const int action_mode_close_button = 2131296323;
 			
-			// aapt resource value: 0x7f0900a9
-			public const int action_settings = 2131296425;
+			// aapt resource value: 0x7f0900aa
+			public const int action_settings = 2131296426;
 			
-			// aapt resource value: 0x7f09008c
-			public const int action_text = 2131296396;
+			// aapt resource value: 0x7f09008d
+			public const int action_text = 2131296397;
 			
-			// aapt resource value: 0x7f09009a
-			public const int actions = 2131296410;
+			// aapt resource value: 0x7f09009b
+			public const int actions = 2131296411;
 			
 			// aapt resource value: 0x7f090044
 			public const int activity_chooser_view_content = 2131296324;
@@ -2535,8 +2535,8 @@ namespace Astropix
 			// aapt resource value: 0x7f09004b
 			public const int buttonPanel = 2131296331;
 			
-			// aapt resource value: 0x7f09008e
-			public const int cancel_action = 2131296398;
+			// aapt resource value: 0x7f09008f
+			public const int cancel_action = 2131296399;
 			
 			// aapt resource value: 0x7f090030
 			public const int center = 2131296304;
@@ -2550,8 +2550,8 @@ namespace Astropix
 			// aapt resource value: 0x7f09005b
 			public const int checkbox = 2131296347;
 			
-			// aapt resource value: 0x7f090096
-			public const int chronometer = 2131296406;
+			// aapt resource value: 0x7f090097
+			public const int chronometer = 2131296407;
 			
 			// aapt resource value: 0x7f090039
 			public const int clip_horizontal = 2131296313;
@@ -2610,8 +2610,8 @@ namespace Astropix
 			// aapt resource value: 0x7f090021
 			public const int end = 2131296289;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int end_padder = 2131296416;
+			// aapt resource value: 0x7f0900a1
+			public const int end_padder = 2131296417;
 			
 			// aapt resource value: 0x7f09002a
 			public const int enterAlways = 2131296298;
@@ -2649,11 +2649,11 @@ namespace Astropix
 			// aapt resource value: 0x7f090049
 			public const int icon = 2131296329;
 			
-			// aapt resource value: 0x7f0900a1
-			public const int icon_frame = 2131296417;
+			// aapt resource value: 0x7f0900a2
+			public const int icon_frame = 2131296418;
 			
-			// aapt resource value: 0x7f09009b
-			public const int icon_group = 2131296411;
+			// aapt resource value: 0x7f09009c
+			public const int icon_group = 2131296412;
 			
 			// aapt resource value: 0x7f090025
 			public const int ifRoom = 2131296293;
@@ -2664,11 +2664,14 @@ namespace Astropix
 			// aapt resource value: 0x7f090075
 			public const int imagesOfTheDayList = 2131296373;
 			
-			// aapt resource value: 0x7f090097
-			public const int info = 2131296407;
+			// aapt resource value: 0x7f090098
+			public const int info = 2131296408;
 			
 			// aapt resource value: 0x7f090000
 			public const int item_touch_helper_previous_elevation = 2131296256;
+			
+			// aapt resource value: 0x7f090086
+			public const int itemcontainer = 2131296390;
 			
 			// aapt resource value: 0x7f090077
 			public const int largeLabel = 2131296375;
@@ -2676,14 +2679,14 @@ namespace Astropix
 			// aapt resource value: 0x7f090034
 			public const int left = 2131296308;
 			
-			// aapt resource value: 0x7f09009c
-			public const int line1 = 2131296412;
+			// aapt resource value: 0x7f09009d
+			public const int line1 = 2131296413;
 			
-			// aapt resource value: 0x7f09009e
-			public const int line3 = 2131296414;
+			// aapt resource value: 0x7f09009f
+			public const int line3 = 2131296415;
 			
-			// aapt resource value: 0x7f0900a3
-			public const int list = 2131296419;
+			// aapt resource value: 0x7f0900a4
+			public const int list = 2131296420;
 			
 			// aapt resource value: 0x7f09000f
 			public const int listMode = 2131296271;
@@ -2691,11 +2694,11 @@ namespace Astropix
 			// aapt resource value: 0x7f090048
 			public const int list_item = 2131296328;
 			
-			// aapt resource value: 0x7f0900a8
-			public const int masked = 2131296424;
+			// aapt resource value: 0x7f0900a9
+			public const int masked = 2131296425;
 			
-			// aapt resource value: 0x7f090090
-			public const int media_actions = 2131296400;
+			// aapt resource value: 0x7f090091
+			public const int media_actions = 2131296401;
 			
 			// aapt resource value: 0x7f090022
 			public const int middle = 2131296290;
@@ -2718,14 +2721,14 @@ namespace Astropix
 			// aapt resource value: 0x7f090010
 			public const int normal = 2131296272;
 			
-			// aapt resource value: 0x7f090099
-			public const int notification_background = 2131296409;
+			// aapt resource value: 0x7f09009a
+			public const int notification_background = 2131296410;
+			
+			// aapt resource value: 0x7f090094
+			public const int notification_main_column = 2131296404;
 			
 			// aapt resource value: 0x7f090093
-			public const int notification_main_column = 2131296403;
-			
-			// aapt resource value: 0x7f090092
-			public const int notification_main_column_container = 2131296402;
+			public const int notification_main_column_container = 2131296403;
 			
 			// aapt resource value: 0x7f090037
 			public const int parallax = 2131296311;
@@ -2748,11 +2751,11 @@ namespace Astropix
 			// aapt resource value: 0x7f090035
 			public const int right = 2131296309;
 			
-			// aapt resource value: 0x7f090098
-			public const int right_icon = 2131296408;
+			// aapt resource value: 0x7f090099
+			public const int right_icon = 2131296409;
 			
-			// aapt resource value: 0x7f090094
-			public const int right_side = 2131296404;
+			// aapt resource value: 0x7f090095
+			public const int right_side = 2131296405;
 			
 			// aapt resource value: 0x7f09001a
 			public const int screen = 2131296282;
@@ -2802,11 +2805,11 @@ namespace Astropix
 			// aapt resource value: 0x7f090071
 			public const int search_voice_btn = 2131296369;
 			
-			// aapt resource value: 0x7f0900a4
-			public const int seekbar = 2131296420;
-			
 			// aapt resource value: 0x7f0900a5
-			public const int seekbar_value = 2131296421;
+			public const int seekbar = 2131296421;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int seekbar_value = 2131296422;
 			
 			// aapt resource value: 0x7f090072
 			public const int select_dialog_listview = 2131296370;
@@ -2838,8 +2841,8 @@ namespace Astropix
 			// aapt resource value: 0x7f09004c
 			public const int spacer = 2131296332;
 			
-			// aapt resource value: 0x7f0900a2
-			public const int spinner = 2131296418;
+			// aapt resource value: 0x7f0900a3
+			public const int spinner = 2131296419;
 			
 			// aapt resource value: 0x7f090008
 			public const int split_action_bar = 2131296264;
@@ -2856,8 +2859,8 @@ namespace Astropix
 			// aapt resource value: 0x7f090036
 			public const int start = 2131296310;
 			
-			// aapt resource value: 0x7f09008f
-			public const int status_bar_latest_event_content = 2131296399;
+			// aapt resource value: 0x7f090090
+			public const int status_bar_latest_event_content = 2131296400;
 			
 			// aapt resource value: 0x7f09005e
 			public const int submenuarrow = 2131296350;
@@ -2865,17 +2868,17 @@ namespace Astropix
 			// aapt resource value: 0x7f09006f
 			public const int submit_area = 2131296367;
 			
-			// aapt resource value: 0x7f0900a6
-			public const int switchWidget = 2131296422;
+			// aapt resource value: 0x7f0900a7
+			public const int switchWidget = 2131296423;
 			
 			// aapt resource value: 0x7f090011
 			public const int tabMode = 2131296273;
 			
-			// aapt resource value: 0x7f09009f
-			public const int text = 2131296415;
+			// aapt resource value: 0x7f0900a0
+			public const int text = 2131296416;
 			
-			// aapt resource value: 0x7f09009d
-			public const int text2 = 2131296413;
+			// aapt resource value: 0x7f09009e
+			public const int text2 = 2131296414;
 			
 			// aapt resource value: 0x7f090052
 			public const int textSpacerNoButtons = 2131296338;
@@ -2892,8 +2895,8 @@ namespace Astropix
 			// aapt resource value: 0x7f09000d
 			public const int textinput_error = 2131296269;
 			
-			// aapt resource value: 0x7f090095
-			public const int time = 2131296405;
+			// aapt resource value: 0x7f090096
+			public const int time = 2131296406;
 			
 			// aapt resource value: 0x7f09004a
 			public const int title = 2131296330;
@@ -2922,17 +2925,17 @@ namespace Astropix
 			// aapt resource value: 0x7f09000b
 			public const int transition_scene_layoutid_cache = 2131296267;
 			
+			// aapt resource value: 0x7f09008a
+			public const int tvCopyright = 2131296394;
+			
 			// aapt resource value: 0x7f090089
-			public const int tvCopyright = 2131296393;
+			public const int tvExplanation = 2131296393;
 			
 			// aapt resource value: 0x7f090088
-			public const int tvExplanation = 2131296392;
+			public const int tvTitle = 2131296392;
 			
 			// aapt resource value: 0x7f090087
-			public const int tvTitle = 2131296391;
-			
-			// aapt resource value: 0x7f090086
-			public const int tvWhen = 2131296390;
+			public const int tvWhen = 2131296391;
 			
 			// aapt resource value: 0x7f090009
 			public const int up = 2131296265;
@@ -2943,8 +2946,8 @@ namespace Astropix
 			// aapt resource value: 0x7f09000e
 			public const int view_offset_helper = 2131296270;
 			
-			// aapt resource value: 0x7f0900a7
-			public const int visible = 2131296423;
+			// aapt resource value: 0x7f0900a8
+			public const int visible = 2131296424;
 			
 			// aapt resource value: 0x7f090027
 			public const int withText = 2131296295;
@@ -3410,41 +3413,41 @@ namespace Astropix
 			// aapt resource value: 0x7f0b002f
 			public const int contactme = 2131427375;
 			
-			// aapt resource value: 0x7f0b003e
-			public const int enableservice = 2131427390;
-			
-			// aapt resource value: 0x7f0b003f
-			public const int enableservice_desc = 2131427391;
-			
 			// aapt resource value: 0x7f0b0030
-			public const int eng = 2131427376;
+			public const int enableservice = 2131427376;
 			
 			// aapt resource value: 0x7f0b0031
-			public const int esp = 2131427377;
+			public const int enableservice_desc = 2131427377;
 			
 			// aapt resource value: 0x7f0b0032
-			public const int hd = 2131427378;
+			public const int eng = 2131427378;
 			
 			// aapt resource value: 0x7f0b0033
-			public const int image_quality = 2131427379;
+			public const int esp = 2131427379;
 			
 			// aapt resource value: 0x7f0b0034
-			public const int image_quality_desc = 2131427380;
+			public const int hd = 2131427380;
 			
 			// aapt resource value: 0x7f0b0035
-			public const int myname = 2131427381;
+			public const int image_quality = 2131427381;
 			
 			// aapt resource value: 0x7f0b0036
-			public const int noexplanationavailable = 2131427382;
+			public const int image_quality_desc = 2131427382;
 			
 			// aapt resource value: 0x7f0b0037
-			public const int normal = 2131427383;
+			public const int myname = 2131427383;
 			
 			// aapt resource value: 0x7f0b0038
-			public const int notitleavailable = 2131427384;
+			public const int noexplanationavailable = 2131427384;
 			
 			// aapt resource value: 0x7f0b0039
-			public const int options = 2131427385;
+			public const int normal = 2131427385;
+			
+			// aapt resource value: 0x7f0b003a
+			public const int notitleavailable = 2131427386;
+			
+			// aapt resource value: 0x7f0b003b
+			public const int options = 2131427387;
 			
 			// aapt resource value: 0x7f0b0026
 			public const int password_toggle_content_description = 2131427366;
@@ -3464,14 +3467,14 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0015
 			public const int search_menu_title = 2131427349;
 			
-			// aapt resource value: 0x7f0b003a
-			public const int settings = 2131427386;
+			// aapt resource value: 0x7f0b003c
+			public const int settings = 2131427388;
 			
 			// aapt resource value: 0x7f0b0016
 			public const int status_bar_notification_info_overflow = 2131427350;
 			
-			// aapt resource value: 0x7f0b003b
-			public const int translations = 2131427387;
+			// aapt resource value: 0x7f0b003d
+			public const int translations = 2131427389;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int v7_preference_off = 2131427328;
@@ -3479,11 +3482,14 @@ namespace Astropix
 			// aapt resource value: 0x7f0b0001
 			public const int v7_preference_on = 2131427329;
 			
-			// aapt resource value: 0x7f0b003c
-			public const int version = 2131427388;
+			// aapt resource value: 0x7f0b003e
+			public const int version = 2131427390;
 			
-			// aapt resource value: 0x7f0b003d
-			public const int year = 2131427389;
+			// aapt resource value: 0x7f0b0040
+			public const int versionnumber = 2131427392;
+			
+			// aapt resource value: 0x7f0b003f
+			public const int year = 2131427391;
 			
 			static String()
 			{

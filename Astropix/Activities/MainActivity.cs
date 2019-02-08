@@ -37,17 +37,21 @@ namespace Astropix
             IsApplicationFresh();
             DBHelper dbhelper = new DBHelper();
 
-            imagesOfTheDay = dbhelper.SelectTableImageOfTheDay();
 
 
 
-            using (recyclerView = FindViewById<RecyclerView>(Resource.Id.imagesOfTheDayList))
+            recyclerView = FindViewById<RecyclerView>(Resource.Id.imagesOfTheDayList);
+            ThreadPool.QueueUserWorkItem(method =>
             {
+                imagesOfTheDay = dbhelper.SelectTableImageOfTheDay();
+
                 imageOfTheDayAdapter = new ImageOfTheDayAdapter(imagesOfTheDay);
                 layoutManager = new LinearLayoutManager(Application.Context);
                 recyclerView.SetLayoutManager(layoutManager);
-                recyclerView.SetAdapter(imageOfTheDayAdapter);
-            };
+                RunOnUiThread(()=>
+                recyclerView.SetAdapter(imageOfTheDayAdapter));
+            });
+            
 
             using (Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar))
             {

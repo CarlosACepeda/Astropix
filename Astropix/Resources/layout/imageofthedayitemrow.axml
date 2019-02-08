@@ -7,14 +7,14 @@
 	<android.support.v7.widget.CardView
 		app:cardCornerRadius="5dp"
 		app:cardUseCompatPadding="true"
-		app:contentPadding="4dp"
+		app:contentPadding="10dp"
 		android:minWidth="25px"
 		android:minHeight="25px"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		app:cardElevation="1dp"
-		android:alpha="100">
+		app:cardElevation="5dp">
 		<LinearLayout
+			android:id="@+id/itemcontainer"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:orientation="vertical">

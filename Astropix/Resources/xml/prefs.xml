@@ -22,7 +22,7 @@
   <PreferenceCategory a:title="@string/about">
     <Preference
       a:title="@string/version"
-      a:summary="bash"
+      a:summary="@string/versionnumber"
       a:selectable="false"
       a:persistent="false"
       >

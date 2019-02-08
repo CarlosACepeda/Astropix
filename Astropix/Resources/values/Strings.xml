@@ -5,6 +5,8 @@
   <string name="app_name">Astropix</string>
   <string name="askfortranslation">Want to help translating?</string>
   <string name="contactme">Contact me</string>
+  <string name="enableservice">Enable service</string>
+  <string name="enableservice_desc">Download an image each day.</string>
   <string name="eng">English</string>
   <string name="esp">Spanish</string>
   <string name="hd">HD</string>
@@ -19,6 +21,5 @@
   <string name="translations">Translations</string>
   <string name="version">Version</string>
   <string name="year">2018</string>
-  <string name="enableservice">Enable service</string>
-  <string name="enableservice_desc">Download an image each day.</string>
+  <string name="versionnumber">0.1.6</string>
 </resources>

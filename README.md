@@ -5,7 +5,6 @@ This is a simple app that retrieves directly from "NASA Astronomy Picture of the
 
 ### Screenshots
 
-*The image displayed shows the Messier 86 (M86) Galaxy in the Virgo Cluster*
 
 |Main Activity:|Changed Wallpaper :)|
 |-----------|------------|
