@@ -1,25 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.Graphics;
+﻿using Android.App;
 using Android.OS;
-using Android.Runtime;
 using Android.Support.Design.Widget;
-using Android.Views;
 using Android.Widget;
-using Astropix.Adapters;
+using System;
 
 namespace Astropix.Activities
 {
     [Activity(Label = "ImageViewerActivity")]
     public class ImageViewerActivity : Activity
     {
-        FloatingActionButton fab;
+        private FloatingActionButton fab;
         private ImageView image;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -30,7 +22,6 @@ namespace Astropix.Activities
             image = FindViewById<ImageView>(Resource.Id.SpaceImage);
 
             fab.Click += FabOnClick;
-
 
             // Create your application here
 

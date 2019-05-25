@@ -1,26 +1,20 @@
-﻿using System;
-
+﻿using Android.App;
+using Android.Content;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.Widget;
-using Astropix.DataRepository;
-using System.Collections.Generic;
-using Astropix.Factories;
-using Android.Content;
-using Android.App;
 using Astropix.Activities;
-using Android.Graphics;
-using Android.Graphics.Drawables;
-using Java.IO;
-using Android.Text.Format;
+using Astropix.DataRepository;
+using System;
+using System.Collections.Generic;
 
 namespace Astropix.Adapters
 {
-    class ImageOfTheDayAdapter : RecyclerView.Adapter
+    internal class ImageOfTheDayAdapter : RecyclerView.Adapter
     {
         private List<ImageOfTheDay> imagesOfTheDay = new List<ImageOfTheDay>();
-        
-        public ImageOfTheDayAdapter(List<ImageOfTheDay> imagesOfTheDay )
+
+        public ImageOfTheDayAdapter(List<ImageOfTheDay> imagesOfTheDay)
         {
             this.imagesOfTheDay = imagesOfTheDay;
         }
@@ -28,7 +22,6 @@ namespace Astropix.Adapters
         // Create new views (invoked by the layout manager)
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
-
             //Setup your layout here
             View itemView = null;
             var id = Resource.Layout.imageofthedayitemrow;
@@ -41,7 +34,6 @@ namespace Astropix.Adapters
         // Replace the contents of a view (invoked by the layout manager)
         public override void OnBindViewHolder(RecyclerView.ViewHolder viewHolder, int position)
         {
-
             // Replace the contents of the view with that element
             var holder = viewHolder as ImageOfTheDayAdapterViewHolder;
             holder.title.Text = imagesOfTheDay[position].Title;
@@ -71,13 +63,12 @@ namespace Astropix.Adapters
         public override int ItemCount => imagesOfTheDay.Count;
 
         private void Image_Click(object sender, EventArgs e)
-        {            
+        {
             using (Intent intent = new Intent(Application.Context, typeof(ImageViewerActivity)))
             {
                 Application.Context.StartActivity(intent);
             }
         }
-
     }
 
     public class ImageOfTheDayAdapterViewHolder : RecyclerView.ViewHolder
@@ -95,10 +86,6 @@ namespace Astropix.Adapters
             explanation = itemView.FindViewById<TextView>(Resource.Id.tvExplanation);
             copyright = itemView.FindViewById<TextView>(Resource.Id.tvCopyright);
             container = itemView.FindViewById<LinearLayout>(Resource.Id.itemcontainer);
-
         }
-
-        
     }
-
 }

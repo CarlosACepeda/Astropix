@@ -1,23 +1,17 @@
-﻿using System;
+﻿using Android.Util;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.Util;
-using SQLite;
 namespace Astropix.DataRepository
 {
-    class DBHelper: Java.Lang.Object
+    internal class DBHelper : Java.Lang.Object
     {
-        SQLiteConnection connection;
-        readonly string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        readonly string databasename = "notifications.db";
+        private SQLiteConnection connection;
+        private readonly string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        private readonly string databasename = "notifications.db";
+
         public bool CreateDatabase()
         {
             try
@@ -34,6 +28,7 @@ namespace Astropix.DataRepository
                 return false;
             }
         }
+
         public List<ImageOfTheDay> SelectTableImageOfTheDay()
         {
             try
@@ -49,6 +44,7 @@ namespace Astropix.DataRepository
                 return null;
             }
         }
+
         public bool InsertIntoTableImageOfTheDay(ImageOfTheDay imageOfTheDay)
         {
             try
@@ -65,6 +61,7 @@ namespace Astropix.DataRepository
                 return false;
             }
         }
+
         //THis method is not neccesary, yet, anyway, is here if I need it some day.
         public bool UpdateTableImageOfTheDay(ImageOfTheDay imageOfTheDay)
         {
@@ -81,6 +78,7 @@ namespace Astropix.DataRepository
                 return false;
             }
         }
+
         //This method is not necessary yet.
         public bool DeleteTableImageOfTheDay(ImageOfTheDay imageOfTheDay)
         {
@@ -98,8 +96,9 @@ namespace Astropix.DataRepository
                 return false;
             }
         }
+
         /// <summary>
-        /// Select a registry from the table using the url of the image, because that is the only way 
+        /// Select a registry from the table using the url of the image, because that is the only way
         /// I have to identify an Image of the Day, the API does not provide an unique Id.
         /// </summary>
         /// <param name="hd_url"></param>
@@ -118,7 +117,6 @@ namespace Astropix.DataRepository
             {
                 return false;
             }
-            
         }
     }
 }

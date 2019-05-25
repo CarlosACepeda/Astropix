@@ -1,32 +1,26 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--Here it goes the PreferenceScreen for Astropix-->
 <PreferenceScreen xmlns:a="http://schemas.android.com/apk/res/android">
   <PreferenceCategory a:title="@string/options">
     <SwitchPreference
       a:key="enableservice"
       a:title="@string/enableservice"
-      a:summary="@string/enableservice_desc"
-      >
-      
+      a:summary="@string/enableservice_desc">
     </SwitchPreference>
     <ListPreference
       a:key="imagequality"
       a:title="@string/image_quality"
       a:summary="@string/image_quality_desc"
       a:entries="@array/listentries"
-      a:entryValues="@array/listvalues"
-      >
+      a:entryValues="@array/listvalues">
     </ListPreference>
-    
   </PreferenceCategory>
   <PreferenceCategory a:title="@string/about">
     <Preference
       a:title="@string/version"
       a:summary="@string/versionnumber"
       a:selectable="false"
-      a:persistent="false"
-      >
-      
+      a:persistent="false">
     </Preference>
   </PreferenceCategory>
   <PreferenceCategory a:title="@string/translations">
@@ -34,39 +28,30 @@
       a:title="@string/eng"
       a:summary="@string/myname"
       a:selectable="false"
-      a:persistent="false"
-      >
+      a:persistent="false">
     </Preference>
     <Preference
       a:title="@string/esp"
       a:summary="@string/myname"
       a:selectable="false"
-      a:persistent="false"
-      >
-
+      a:persistent="false">
     </Preference>
     <Preference
       a:title="@string/askfortranslation"
       a:summary="@string/contactme"
       a:selectable="true"
-      a:persistent="false"
-      >
+      a:persistent="false">
       <intent
         a:action="android.intent.action.VIEW"
-        a:data="mailto:carlosalt5126@hotmail.es"
-        >
+        a:data="mailto:carlosalt5126@hotmail.es">
         <extra
           a:name="android.intent.extra.SUBJECT"
-          a:value="translations"
-          >
+          a:value="translations">
         </extra>
         <extra
           a:name="android.intent.extra.TEXT"
-          a:value="Hello there, I want to help with translations for..."
-          >
-          
+          a:value="Hello there, I want to help with translations for...">
         </extra>
-        
       </intent>
     </Preference>
   </PreferenceCategory>

@@ -1,30 +1,25 @@
-﻿using System;
-using Android.App;
-using Android.Widget;
-using Android.OS;
-using Android.Support.Design.Widget;
-using Android.Support.V7.App;
-using Android.Views;
+﻿using Android.App;
 using Android.Content;
-using Astropix.Services;
-using System.Threading;
-using Astropix.Factories;
-using System.Threading.Tasks;
-using Android.Graphics;
-using Astropix.Activities;
-using Astropix.DataRepository;
-using Android.Support.V7.Widget;
-using Astropix.Adapters;
-using System.Collections.Generic;
+using Android.OS;
+using Android.Support.V7.App;
 using Android.Support.V7.Preferences;
-using Astropix.Misc;
+using Android.Support.V7.Widget;
 using Android.Util;
+using Android.Views;
+using Android.Widget;
+using Astropix.Activities;
+using Astropix.Adapters;
+using Astropix.DataRepository;
+using Astropix.Misc;
+using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace Astropix
 {
-	[Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-	public class MainActivity : AppCompatActivity
-	{
+    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    public class MainActivity : AppCompatActivity
+    {
         private ImageView background;
         private RecyclerView recyclerView;
         private RecyclerView.LayoutManager layoutManager;
@@ -37,9 +32,6 @@ namespace Astropix
             IsApplicationFresh();
             DBHelper dbhelper = new DBHelper();
 
-
-
-
             recyclerView = FindViewById<RecyclerView>(Resource.Id.imagesOfTheDayList);
             ThreadPool.QueueUserWorkItem(method =>
             {
@@ -48,10 +40,9 @@ namespace Astropix
                 imageOfTheDayAdapter = new ImageOfTheDayAdapter(imagesOfTheDay);
                 layoutManager = new LinearLayoutManager(Application.Context);
                 recyclerView.SetLayoutManager(layoutManager);
-                RunOnUiThread(()=>
+                RunOnUiThread(() =>
                 recyclerView.SetAdapter(imageOfTheDayAdapter));
             });
-            
 
             using (Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar))
             {
@@ -72,18 +63,20 @@ namespace Astropix
                 }
             }
 
-
             base.OnCreate(savedInstanceState);
         }
+
         protected override void OnResume()
         {
             base.OnResume();
         }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -105,9 +98,8 @@ namespace Astropix
             //    .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
             //Intent intent = new Intent(this, typeof(AstropixRetrieverService));
             //StartService(intent);
-
-            
         }
+
         private void IsApplicationFresh()
         {
             using (var sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context))
@@ -122,6 +114,7 @@ namespace Astropix
                 }
             }
         }
+
         private void CreateDatabase()
         {
             using (var dbhelper = new DBHelper())
@@ -129,6 +122,5 @@ namespace Astropix
                 dbhelper.CreateDatabase();
             }
         }
-	}
+    }
 }
-

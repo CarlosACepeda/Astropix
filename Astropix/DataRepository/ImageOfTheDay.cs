@@ -1,13 +1,10 @@
-﻿using Android.Graphics;
-using Java.Util;
-using System;
+﻿using System;
 using System.Xml.Serialization;
 
 namespace Astropix.DataRepository
 {
     internal class ImageOfTheDay
     {
-
         /// <summary>
         /// The date of the picture
         /// </summary>
@@ -37,6 +34,7 @@ namespace Astropix.DataRepository
         /// </summary>
         [XmlElement(ElementName = "url")]
         public string Url { get; set; }
+
         /// <summary>
         /// A picture url in 4k quality.
         /// </summary>
@@ -48,8 +46,6 @@ namespace Astropix.DataRepository
 
         public ImageOfTheDay()
         {
-
         }
-
     }
 }
