@@ -9,7 +9,8 @@ namespace Astropix.DataRepository
     internal class DBHelper : Java.Lang.Object
     {
         private SQLiteConnection connection;
-        private readonly string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        //System.Environment.GetFolderPath wraps Android access to Files, so let this class to figure out what does it mean 'Personal'
+        private readonly string folder = System.Environment.GetFolderPath(Environment.SpecialFolder.Personal);
         private readonly string databasename = "notifications.db";
 
         public bool CreateDatabase()
@@ -24,7 +25,7 @@ namespace Astropix.DataRepository
             }
             catch (SQLiteException ex)
             {
-                Log.Warn("Error en la conexión a la base de datos", ex.Message);
+                Log.Warn("Failing in database connection", ex.Message);
                 return false;
             }
         }
