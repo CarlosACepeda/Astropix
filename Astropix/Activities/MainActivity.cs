@@ -11,6 +11,7 @@ using Astropix.Activities;
 using Astropix.Adapters;
 using Astropix.DataRepository;
 using Astropix.Misc;
+using Astropix.Services;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -102,16 +103,10 @@ namespace Astropix
 
         private void IsApplicationFresh()
         {
-            using (var sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(Application.Context))
+            if (new ConfigurationManager().RetrieveAValue(ConfigurationParameters.IsAppNotFresh)==false)
             {
-                if (sharedPreferences.GetBoolean(ConfigurationParameters.isappfresh, true) == true)
-                {
-                    CreateDatabase();
-                    using (ISharedPreferencesEditor sharedPreferencesEditor = sharedPreferences.Edit())
-                    {
-                        sharedPreferencesEditor.PutBoolean(ConfigurationParameters.isappfresh, false);
-                    }
-                }
+                CreateDatabase();
+                new ConfigurationManager().SaveAValue(ConfigurationParameters.IsAppNotFresh, true);
             }
         }
 

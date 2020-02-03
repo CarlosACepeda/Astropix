@@ -40,7 +40,7 @@ namespace Astropix.Fragments
         {
             //Killswitch to decide if user wants to stop downloading images.
             //Stop All receivers, alarms, etc.
-            if (key == ConfigurationParameters.enableservice)
+            if (key == ConfigurationParameters.EnableService)
             {
                 if (sharedPreferences.GetBoolean(key, false) == true)
                 {

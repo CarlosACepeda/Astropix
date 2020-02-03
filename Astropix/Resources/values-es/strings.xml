@@ -3,12 +3,15 @@
   <string name="about">Acerca de</string>
   <string name="action_settings">Ajustes</string>
   <string name="app_name">Astropix</string>
+  <string name="ask_user_permission">Si quieres ver el wallpaper actual, permite que Astropix pueda acceder a los archivos</string>
   <string name="askfortranslation">¿Quieres ayudar a traducir?</string>
   <string name="contactme">Contáctame</string>
+  <string name="download_first">Descargar la primera imagen</string>
   <string name="enableservice">Activar el servicio</string>
   <string name="enableservice_desc">Descargar una imagen cada día.</string>
   <string name="eng">Inglés</string>
   <string name="esp">Español</string>
+  <string name="first_download_explanation">El servicio descagará desde ahora una imagen cada día</string>
   <string name="hd">HD</string>
   <string name="image_quality">Calidad de imagen</string>
   <string name="image_quality_desc">Seleciona la calidad de imagen</string>
@@ -20,6 +23,7 @@
   <string name="settings">Ajustes</string>
   <string name="translations">Traducciones</string>
   <string name="version">Versión</string>
-  <string name="year">2018</string>
   <string name="versionnumber">0.1.6</string>
+  <string name="welcome">Hola, bienvenido/a Vamos a comenzar</string>
+  <string name="year">2018</string>
 </resources>
